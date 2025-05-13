@@ -6,7 +6,9 @@ export const createServerSupabaseClient = () => {
   const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY
 
   if (!supabaseUrl || !supabaseKey) {
-    throw new Error("Supabase URL and service role key are required. Please check your environment variables.")
+    throw new Error(
+      "Supabase URL and service role key are required. Please check your environment variables."
+    )
   }
 
   return createClient(supabaseUrl, supabaseKey, {
